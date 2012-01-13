@@ -1,0 +1,24 @@
+snippet _%
+	<%${1}%>
+snippet _if
+	<% if ${1} %>
+		${2}
+	<% end %>
+snippet _else
+	<% else %>${1}
+snippet _r
+	<% render "${1:form}" %>
+snippet _f
+	<%= form_for @${1:user} do |f| %>
+		${2}
+	<% end %>
+snippet _f
+	<%= form_for @${1:user}, :html=>{ :class=>"yform full" }, :builder=>YamlFormBuilder do |f| %>
+		${2}
+	<% end %>
+snippet _for
+	<% ${1:user}.each do |i| %>
+		<%= i.to_s %>
+	<% end %>
+snippet _l
+	<%= link_to ${1} %>
