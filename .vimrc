@@ -1,7 +1,7 @@
 "" 文本排版
 set expandtab
-set shiftwidth  =2
-set tabstop     =2
+set shiftwidth  =4
+set tabstop     =4
 set smarttab
 set linebreak
 set textwidth   =500
@@ -71,5 +71,5 @@ autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global = 1
 highlight Pmenu ctermbg=238 gui=bold
 
 "" change color schema end with file
-colorscheme evening
+colorscheme desert 
 
