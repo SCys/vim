@@ -56,6 +56,9 @@ let g:neocomplcache_enable_underbar_completion = 1
 map! <F3> <ESC>:NERDtreeToggle<CR>i
 map  <F3>      :NERDtreeToggle<CR>
 
+"" Auto session
+let g:session_autoload = 'no'
+
 "" general maps with buffer and tab
 map! <S-Left>  <ESC>:bp<CR>i
 map  <S-Left>       :bp<CR>
