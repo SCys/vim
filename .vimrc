@@ -39,9 +39,7 @@ endfunction
 au Filetype eruby source ~/.vim/scripts/closetag.vim
 au Filetype ruby  map <Leader>rt :!ctags --extra=+f --exclude=.git --exclude=log -R * /mnt/extra/sources/lib/ruby/* <CR><CR>
 
-"" TagList Plus map keys(insert mode and normal mode)
-map! <F2> <ESC>:TlistUpdate<CR> :TlistToggle<CR>i
-map  <F2>      :TlistToggle<CR>
+nmap <F2> :TagbarToggle<CR>
 "" NERD tree map keys(insert mode and normal mode)
 " Disable AutoComplPop. 
 let g:acp_enableAtStartup = 0 
