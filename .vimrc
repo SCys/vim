@@ -56,6 +56,7 @@ map  <F3>      :NERDtreeToggle<CR>
 
 "" Auto session
 let g:session_autoload = 'no'
+let g:session_autosave = 'no'
 
 "" general maps with buffer and tab
 map! <S-Left>  <ESC>:bp<CR>i
@@ -73,4 +74,5 @@ highlight Pmenu ctermbg=238 gui=bold
 
 "" change color schema end with file
 colorscheme desert 
-
+" allow backspacing over everything in insert mode
+set backspace=indent,eol,start
