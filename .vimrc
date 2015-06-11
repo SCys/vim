@@ -35,9 +35,11 @@ function! _current_CurDir()
   return curdir
 endfunction
 
-"" Ruby On Rails 3
-au Filetype eruby source ~/.vim/scripts/closetag.vim
-au Filetype ruby  map <Leader>rt :!ctags --extra=+f --exclude=.git --exclude=log -R * /mnt/extra/sources/lib/ruby/* <CR><CR>
+" YCM
+let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/.ycm_extra_conf.py'
+
+" allow backspacing over everything in insert mode
+set backspace=indent,eol,start
 
 nmap <F2> :TagbarToggle<CR>
 "" NERD tree map keys(insert mode and normal mode)
@@ -51,8 +53,8 @@ let g:neocomplcache_enable_smart_case = 1
 let g:neocomplcache_enable_camel_case_completion = 1 
 " Use underbar completion. 
 let g:neocomplcache_enable_underbar_completion = 1
-map! <F3> <ESC>:NERDtreeToggle<CR>i
-map  <F3>      :NERDtreeToggle<CR>
+map! <F3> <ESC>:NERDTreeToggle<CR>i
+map  <F3>      :NERDTreeToggle<CR>
 
 "" Auto session
 let g:session_autoload = 'no'
@@ -74,5 +76,4 @@ highlight Pmenu ctermbg=238 gui=bold
 
 "" change color schema end with file
 colorscheme desert 
-" allow backspacing over everything in insert mode
-set backspace=indent,eol,start
+
