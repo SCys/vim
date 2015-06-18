@@ -38,6 +38,9 @@ endfunction
 " YCM
 let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/.ycm_extra_conf.py'
 
+" CoffeeScript
+let coffee_make_options = '-b -c -m'
+
 " allow backspacing over everything in insert mode
 set backspace=indent,eol,start
 
@@ -57,8 +60,8 @@ map! <F3> <ESC>:NERDTreeToggle<CR>i
 map  <F3>      :NERDTreeToggle<CR>
 
 "" Auto session
-let g:session_autoload = 'no'
-let g:session_autosave = 'no'
+"let g:session_autoload = 'no'
+"let g:session_autosave = 'no'
 
 "" general maps with buffer and tab
 map! <S-Left>  <ESC>:bp<CR>i
