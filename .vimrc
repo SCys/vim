@@ -60,8 +60,8 @@ map! <F3> <ESC>:NERDTreeToggle<CR>i
 map  <F3>      :NERDTreeToggle<CR>
 
 "" Auto session
-"let g:session_autoload = 'no'
-"let g:session_autosave = 'no'
+let g:session_autoload = 'yes'
+let g:session_autosave = 'yes'
 
 "" general maps with buffer and tab
 map! <S-Left>  <ESC>:bp<CR>i
