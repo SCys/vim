@@ -1,22 +1,24 @@
+call plug#begin('~/.vim/bundle')
+Plug 'junegunn/vim-easy-align'
+Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
+Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
+Plug 'fatih/vim-go', { 'tag': '*', 'do': ':GoInstallBinaries', 'for': 'go' }
+Plug 'nsf/gocode', { 'rtp': 'vim', 'for': 'go' }
+Plug 'junegunn/goyo.vim', { 'for': 'markdown' }
+Plug 'neoclide/coc.nvim', {'tag': '*', 'do': { -> coc#util#install()}}
+call plug#end() " Should run at last
+
 "" 文本排版
 set expandtab
 set shiftwidth  =4
 set tabstop     =4
 set smarttab
 set linebreak
-set textwidth   =500
-set autoindent          "" 自动缩进
-set smartindent         "" 智能缩进
-set wrap                "" 换行
-if has("gui_gtk2")
-  set guifont=Bitstream\ Vera\ Sans\ Mono\ 9,Fixed\ 9
-  set guifontwide=Microsoft\ Yahei\ 9,WenQuanYi\ Zen\ Hei\ 9
-endif
+set textwidth   =128
+set autoindent
+set smartindent
+set wrap
 
-"" pathogen(plugin)(must before :filetype on)
-call pathogen#infect()
-
-"" 语法高亮文件类型
 syntax   on
 filetype plugin on
 filetype indent on
@@ -31,52 +33,39 @@ set statusline +=\ %w                           ""
 set statusline +=CWD:\ %r%{_current_CurDir()}%h "" working direction
 set statusline +=%=Line:\ %l/%L:%c              "" row/total row/col number
 function! _current_CurDir()
-  let curdir = substitute(getcwd(), '/home/scys/', "~/", "g")
-  return curdir
+    let curdir = substitute(getcwd(), '/home/scys/', "~/", "g")
+    return curdir
 endfunction
 
-" YCM
-let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/.ycm_extra_conf.py'
-
-" CoffeeScript
-let coffee_make_options = '-b -c -m'
-
-" allow backspacing over everything in insert mode
 set backspace=indent,eol,start
+set hidden
 
-nmap <F2> :TagbarToggle<CR>
-"" NERD tree map keys(insert mode and normal mode)
-" Disable AutoComplPop. 
-let g:acp_enableAtStartup = 0 
-" Use neocomplcache. 
-let g:neocomplcache_enable_at_startup = 1 
-" Use smartcase. 
-let g:neocomplcache_enable_smart_case = 1 
-" Use camel case completion. 
-let g:neocomplcache_enable_camel_case_completion = 1 
-" Use underbar completion. 
-let g:neocomplcache_enable_underbar_completion = 1
-map! <F3> <ESC>:NERDTreeToggle<CR>i
-map  <F3>      :NERDTreeToggle<CR>
-
-"" Auto session
-let g:session_autoload = 'yes'
-let g:session_autosave = 'yes'
-
-"" general maps with buffer and tab
+"" fast change the buffer window 
 map! <S-Left>  <ESC>:bp<CR>i
 map  <S-Left>       :bp<CR>
 map! <S-Right> <ESC>:bn<CR>i
 map  <S-Right>      :bn<CR>
 
-"ruby
-autocmd FileType ruby,eruby set omnifunc=rubycomplete#Complete
-autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading = 1
-autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
-autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global = 1
-"improve autocomplete menu color
-highlight Pmenu ctermbg=238 gui=bold
-
-"" change color schema end with file
+"" the color theme 
 colorscheme desert 
+
+nmap <leader>s<left>   :leftabove  vnew<cr>
+nmap <leader>s<right>  :rightbelow vnew<cr>
+nmap <leader>s<up>     :leftabove  new<cr>
+nmap <leader>s<down>   :rightbelow new<cr>
+
+nmap <leader>n :NERDTreeToggle<CR>
+
+noremap <tab> <c-w>w
+noremap <S-tab> <c-w>W
+
+nmap <silent> [c <Plug>(coc-diagnostic-prev)
+nmap <silent> ]c <Plug>(coc-diagnostic-next)
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
+nmap <leader>rn <Plug>(coc-rename)
+vmap <leader>f  <Plug>(coc-format-selected)
+nmap <leader>f  <Plug>(coc-format-selected)
 
