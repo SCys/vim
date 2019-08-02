@@ -6,6 +6,8 @@ Plug 'fatih/vim-go', { 'tag': '*', 'do': ':GoInstallBinaries', 'for': 'go' }
 Plug 'nsf/gocode', { 'rtp': 'vim', 'for': 'go' }
 Plug 'junegunn/goyo.vim', { 'for': 'markdown' }
 Plug 'neoclide/coc.nvim', {'tag': '*', 'do': { -> coc#util#install()}}
+Plug 'ekalinin/Dockerfile.vim'
+Plug 'chr4/nginx.vim'
 call plug#end() " Should run at last
 
 "" 文本排版
