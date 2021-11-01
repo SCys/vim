@@ -1,13 +1,15 @@
 call plug#begin('~/.vim/bundle')
-Plug 'junegunn/vim-easy-align'
-Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
-Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
-Plug 'fatih/vim-go', { 'tag': '*', 'do': ':GoInstallBinaries', 'for': 'go' }
-Plug 'nsf/gocode', { 'rtp': 'vim', 'for': 'go' }
-Plug 'junegunn/goyo.vim', { 'for': 'markdown' }
-Plug 'neoclide/coc.nvim', {'tag': '*', 'do': { -> coc#util#install()}}
-Plug 'ekalinin/Dockerfile.vim'
-Plug 'chr4/nginx.vim'
+    Plug 'junegunn/vim-easy-align'
+    Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
+    Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
+    Plug 'fatih/vim-go', { 'tag': '*', 'do': ':GoInstallBinaries', 'for': 'go' }
+    Plug 'nsf/gocode', { 'rtp': 'vim', 'for': 'go' }
+    Plug 'junegunn/goyo.vim', { 'for': 'markdown' }
+    Plug 'neoclide/coc.nvim', {'tag': '*', 'do': { -> coc#util#install()}}
+    Plug 'ekalinin/Dockerfile.vim'
+    Plug 'chr4/nginx.vim'
+    Plug 'skanehira/docker-compose.vim'
+    Plug 'khaveesh/vim-fish-syntax'
 call plug#end() " Should run at last
 
 "" 文本排版
@@ -20,6 +22,7 @@ set textwidth   =128
 set autoindent
 set smartindent
 set wrap
+set modeline
 
 syntax   on
 filetype plugin on
@@ -71,3 +74,4 @@ nmap <leader>rn <Plug>(coc-rename)
 vmap <leader>f  <Plug>(coc-format-selected)
 nmap <leader>f  <Plug>(coc-format-selected)
 
+let g:coc_disable_startup_warning = 1
