@@ -1,3 +1,4 @@
+let g:plug_url_format='https://git::@hub.fastgit.org/%s.git'
 call plug#begin('~/.vim/bundle')
     Plug 'junegunn/vim-easy-align'
     Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
